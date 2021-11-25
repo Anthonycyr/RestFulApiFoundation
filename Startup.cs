@@ -13,9 +13,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql;
-using RestfulApi.Models;
+using ApexRocketApi.Models;
 
-namespace RestfulApi
+namespace ApexRocketApi
 {
     public class Startup
     {
@@ -79,7 +79,7 @@ namespace RestfulApi
             services.AddMvc();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestfulApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApexRocketApi", Version = "v1" });
             });
         }
 
@@ -90,7 +90,7 @@ namespace RestfulApi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RestfulApi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApexRocketApi v1"));
             }
 
             app.UseHttpsRedirection();
