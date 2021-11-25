@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace RestfulApi.Models
+namespace ApexRocketApi.Models
 {
     public class ColumnContext : DbContext
     {

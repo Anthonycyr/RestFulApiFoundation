@@ -1,4 +1,4 @@
-namespace RestfulApi.Models
+namespace ApexRocketApi.Models
 {
     public class Battery
     {

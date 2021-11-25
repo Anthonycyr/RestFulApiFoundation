@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "RestfulApi": {
+    "ApexRocketApi": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
