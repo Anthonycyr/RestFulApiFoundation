@@ -1,4 +1,4 @@
-namespace ApexRocketApi.Models
+namespace RestfulApi.Models
 {
     public class Elevator
     {

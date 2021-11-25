@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ApexRocketApi.Models;
+using RestfulApi.Models;
 // using System.Data.Entity;
 
-namespace ApexRocketApi.Controllers
+namespace RestfulApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ApexRocketApi.Models
+namespace RestfulApi.Models
 {
     public class BatteryContext : DbContext
     {
