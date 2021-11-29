@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin/Release/net5.0/publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/7263c4f7-2d06-42b8-9f71-88e8f270c568/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/RocketElevatorAPI"
+}
