@@ -364,3 +364,7 @@
 /home/godly/FoundationRestful/RestfulAPI/obj/Debug/net5.0/ref/RestfulApi.dll
 /home/godly/FoundationRestful/RestfulAPI/obj/Debug/net5.0/RestfulApi.pdb
 /home/godly/FoundationRestful/RestfulAPI/obj/Debug/net5.0/RestfulApi.genruntimeconfig.cache
+/home/godly/FoundationRestful/RestfulAPI/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll
+/home/godly/FoundationRestful/RestfulAPI/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/home/godly/FoundationRestful/RestfulAPI/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
+/home/godly/FoundationRestful/RestfulAPI/bin/Debug/net5.0/Swashbuckle.AspNetCore.Newtonsoft.dll

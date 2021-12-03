@@ -30,6 +30,7 @@ namespace RestfulApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
+            services.AddControllers().AddNewtonsoftJson();
             // options.UseMySql(
             //     "server=localhost;user=root;port=3306;Connect Timeout=5;",
             //     new MySqlServerVersion(new Version(8, 0, 11))
@@ -82,13 +83,20 @@ namespace RestfulApi
                     builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
                 }
                 ));
-
+            services.AddDbContext<InterventionContext>(options =>
+                options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), 
+                new MySqlServerVersion(new Version(8, 0, 11)),
+                builder =>
+                {
+                    builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+                }
+                ));
 
             services.AddMvc();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestfulApi", Version = "v1" });
-            });
+            }).AddSwaggerGenNewtonsoftSupport();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
