@@ -19,5 +19,14 @@ To make it work, use the corect endpoint for your needs:
 
 This API is debloy on a Azure Server and establish a connection with the MySQL transactional database that serves the Ruby on Rails application.
 
+You can also try out the 3 new API Calls that i've created for the consolidation week:
+
+a Get for PendingInterventions, which returns all interventions that are currently of status pending 
+a patch for InProgress, which changes the status of a pending intervention to in progress and adds a start time to the intervention 
+and a patch for Completed, which changes the status of an in progress intervention to Completed and adds an end time to the intervention
+
+you can try each method with the try it out button, and then the excute button, although the patch requires you to select the appropriate intervention by inputting an ID before clicking the execute button.
+
+You could also use postman, for the GET method => https://apexrocketsrestful.herokuapp.com/api/Interventions/PendingInterventions for the PATCH (inprogress) : https://apexrocketsrestful.herokuapp.com/api/Interventions/inprogress/{id} //change {id} for intervention you want for the PATCH (completed) : https://apexrocketsrestful.herokuapp.com/api/Interventions/completed/{id} //change {id} for intervention you want
 
 ###### ***Team New Moon***
