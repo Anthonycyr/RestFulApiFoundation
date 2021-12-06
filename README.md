@@ -21,9 +21,9 @@ This API is debloy on a Azure Server and establish a connection with the MySQL t
 
 You can also try out the 3 new API Calls that i've created for the consolidation week:
 
-a Get for PendingInterventions, which returns all interventions that are currently of status pending 
-a patch for InProgress, which changes the status of a pending intervention to in progress and adds a start time to the intervention 
-and a patch for Completed, which changes the status of an in progress intervention to Completed and adds an end time to the intervention
+- a Get for PendingInterventions, which returns all interventions that are currently of status pending 
+- a patch for InProgress, which changes the status of a pending intervention to in progress and adds a start time to the intervention 
+- and a patch for Completed, which changes the status of an in progress intervention to Completed and adds an end time to the intervention
 
 you can try each method with the try it out button, and then the excute button, although the patch requires you to select the appropriate intervention by inputting an ID before clicking the execute button.
 
