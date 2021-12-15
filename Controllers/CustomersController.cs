@@ -21,86 +21,22 @@ namespace RestfulApi.Controllers
             _context = context;
         }
 
-        // GET: api/Customers
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
-        {
-            return await _context.customers.ToListAsync();
-        }
-       
 
-        // GET: api/Customers/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Customer>> GetCustomer(long id)
+        // GET: api/Customers/{email}
+        [HttpGet("{company_email}")]
+        public async Task<ActionResult<bool>> IsEmailCustomer(string company_email)
         {
-            var elevator = await _context.customers.FindAsync(id);
-
-            if (elevator == null)
+            var customerlist = await _context.customers.ToListAsync();
+            foreach (Customer customer in customerlist)
             {
-                return NotFound();
+                if((customer.company_email == $"{company_email}") == true)
+                {
+                    return true;
+                }
             }
-
-            return elevator;
+            return false;
         }
         
-        // PUT: api/Customers/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCustomer(long id, Customer elevator)
-        {
-            if (id != elevator.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(elevator).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CustomerExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Customers
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Customer>> PostCustomer(Customer elevator)
-        {
-            _context.customers.Add(elevator);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetCustomer), new { id = elevator.Id }, elevator);
-        }
-
-        // DELETE: api/Customers/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCustomer(long id)
-        {
-            var elevator = await _context.customers.FindAsync(id);
-            if (elevator == null)
-            {
-                return NotFound();
-            }
-
-            _context.customers.Remove(elevator);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
         private bool CustomerExists(long id)
         {
             return _context.customers.Any(e => e.Id == id);
