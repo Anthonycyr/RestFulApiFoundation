@@ -145,12 +145,13 @@ namespace RestfulApi.Controllers
             var customerlist = await _context.customers.ToListAsync();
             foreach (Customer customer in customerlist)
             {
-                if((customer.company_email == $"{company_email}") == true)
+                if(customer.company_email == company_email)
                 {
                     return customer.Id;
                 }
             }
             return null;
         }
+        
     }
 }
