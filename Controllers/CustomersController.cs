@@ -21,7 +21,7 @@ namespace RestfulApi.Controllers
             _context = context;
         }
 
-        [HttpPatch ("HeadquarterUpdate/{id}&{company_headquarter}")]
+        [HttpPut ("HeadquarterUpdate/{id}&{company_headquarter}")]
         public string HeadquarterUpdate (long id,string company_headquarter)
         {
             var InfoCustomer = _context.customers.Find(id);
@@ -37,7 +37,7 @@ namespace RestfulApi.Controllers
             }   
         }
 
-        [HttpPatch ("ContactUpdate/{id}&{company_contact}")]
+        [HttpPut ("ContactUpdate/{id}&{company_contact}")]
         public string ContactUpdate (long id,string company_contact)
         {
             var InfoCustomer = _context.customers.Find(id);
@@ -53,7 +53,7 @@ namespace RestfulApi.Controllers
             }   
         }
 
-        [HttpPatch ("DescriptionUpdate/{id}&{company_description}")]
+        [HttpPut ("DescriptionUpdate/{id}&{company_description}")]
         public string DescriptionUpdate (long id,string company_description)
         {
             var InfoCustomer = _context.customers.Find(id);
@@ -69,7 +69,7 @@ namespace RestfulApi.Controllers
             }   
         }
 
-        [HttpPatch ("TechNameUpdate/{id}&{service_technical_authority_name}")]
+        [HttpPut ("TechNameUpdate/{id}&{service_technical_authority_name}")]
         public string TechNameUpdate (long id,string service_technical_authority_name)
         {
             var InfoCustomer = _context.customers.Find(id);
@@ -85,7 +85,7 @@ namespace RestfulApi.Controllers
             }   
         }
 
-        [HttpPatch ("TechPhoneUpdate/{id}&{technical_authority_phone}")]
+        [HttpPut ("TechPhoneUpdate/{id}&{technical_authority_phone}")]
         public string TechPhoneUpdate (long id,string technical_authority_phone)
         {
             var InfoCustomer = _context.customers.Find(id);
@@ -101,7 +101,7 @@ namespace RestfulApi.Controllers
             }   
         }
 
-        [HttpPatch ("TechEmailUpdate/{id}&{service_technical_authority_email}")]
+        [HttpPut ("TechEmailUpdate/{id}&{service_technical_authority_email}")]
         public string TechEmailUpdate (long id,string service_technical_authority_email)
         {
             var InfoCustomer = _context.customers.Find(id);
