@@ -4493,19 +4493,19 @@
     ]
   },
   "packageFolders": {
-    "/home/anthony/.nuget/packages/": {}
+    "/home/godly/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anthony/FoundationRestful/RestfulApi.csproj",
+      "projectUniqueName": "/home/godly/FoundationRestful/RestfulAPI/RestfulApi.csproj",
       "projectName": "RestfulApi",
-      "projectPath": "/home/anthony/FoundationRestful/RestfulApi.csproj",
-      "packagesPath": "/home/anthony/.nuget/packages/",
-      "outputPath": "/home/anthony/FoundationRestful/obj/",
+      "projectPath": "/home/godly/FoundationRestful/RestfulAPI/RestfulApi.csproj",
+      "packagesPath": "/home/godly/.nuget/packages/",
+      "outputPath": "/home/godly/FoundationRestful/RestfulAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/anthony/.nuget/NuGet/NuGet.Config"
+        "/home/godly/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
