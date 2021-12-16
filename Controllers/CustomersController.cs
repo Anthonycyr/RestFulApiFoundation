@@ -41,5 +41,19 @@ namespace RestfulApi.Controllers
         {
             return _context.customers.Any(e => e.Id == id);
         }
+        // GET: api/Customers/{email}
+        [HttpGet("/getId/{company_email}")]
+        public async Task<ActionResult<long>> IdCustomer(string company_email)
+        {
+            var customerlist = await _context.customers.ToListAsync();
+            foreach (Customer customer in customerlist)
+            {
+                if((customer.company_email == $"{company_email}") == true)
+                {
+                    return customer.Id;
+                }
+            }
+            return null;
+        }
     }
 }
