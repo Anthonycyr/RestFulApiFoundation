@@ -111,7 +111,7 @@ namespace RestfulApi.Controllers
 
             foreach (Building building in buildinglist)
             {
-                if((building.customer_id == customer_id) == true)
+                if(building.customer_id == customer_id)
                 {
                     CustomerBuilding.Add(building);
                     return CustomerBuilding;

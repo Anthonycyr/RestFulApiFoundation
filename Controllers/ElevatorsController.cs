@@ -50,6 +50,22 @@ namespace RestfulApi.Controllers
             var elevator = await _context.elevators.Where(x => x.status == "Offline" || x.status == "Intervention" ).ToListAsync();
             return elevator;
         }
+        [HttpGet("/getCustomerElevator/{column_id}")]
+        public async Task<List<Elevator>> customerElevator(int column_id)
+        {
+            List<Elevator> CustomerElevator = new List<Elevator>();
+            var elevatorlist = await _context.elevators.ToListAsync();
+
+            foreach (Elevator elevator in elevatorlist)
+            {
+                if(elevator.column_id == column_id)
+                {
+                    CustomerElevator.Add(elevator);
+                    return CustomerElevator;
+                }
+            }
+            return null;
+        }
         
 
 
