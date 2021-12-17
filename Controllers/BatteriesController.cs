@@ -52,10 +52,10 @@ namespace RestfulApi.Controllers
                 if(battery.building_id == building_id)
                 {
                     CustomerBattery.Add(battery);
-                    return CustomerBattery;
-                }
+                    
+                } 
             }
-            return null;
+            return CustomerBattery;
         }
 
         // PUT: api/Batteries/5

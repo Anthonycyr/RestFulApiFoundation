@@ -114,10 +114,10 @@ namespace RestfulApi.Controllers
                 if(building.customer_id == customer_id)
                 {
                     CustomerBuilding.Add(building);
-                    return CustomerBuilding;
+                    
                 }
             }
-            return null;
+            return CustomerBuilding;
         }
 
         // PUT: api/Buildings/5

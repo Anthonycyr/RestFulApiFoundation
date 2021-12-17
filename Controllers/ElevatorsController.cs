@@ -61,10 +61,10 @@ namespace RestfulApi.Controllers
                 if(elevator.column_id == column_id)
                 {
                     CustomerElevator.Add(elevator);
-                    return CustomerElevator;
+                    
                 }
             }
-            return null;
+            return CustomerElevator;
         }
         
 
