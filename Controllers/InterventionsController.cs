@@ -19,6 +19,18 @@ namespace RestfulApi.Controllers
         {
             _context = context;
         }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Intervention>> GetIntervention(long id)
+        {
+            var intervention = await _context.interventions.FindAsync(id);
+
+            if (intervention == null)
+            {
+                return NotFound();
+            }
+
+            return intervention;
+        }
 
         [HttpGet("PendingInterventions")]
         public async Task<List<Intervention>> GetPendingInterventions(long id)
@@ -57,6 +69,14 @@ namespace RestfulApi.Controllers
                 _context.SaveChanges ();
                 return "The intervention #" + interv.id + " status has been successufully changed to In Progress";
             }   
+        }
+        [HttpPost]
+        public async Task<ActionResult<Intervention>> PostBuilding(Intervention intervention)
+        {
+            _context.interventions.Add(intervention);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetIntervention), new { id = intervention.id }, intervention);
         }
 
         [HttpPatch ("completed/{id}")]
