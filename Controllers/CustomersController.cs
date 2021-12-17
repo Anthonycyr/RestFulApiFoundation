@@ -21,6 +21,19 @@ namespace RestfulApi.Controllers
             _context = context;
         }
 
+        [HttpGet ("CustomerInfo/{id}")]
+        public async Task<ActionResult<Customer>> GetCustomerInfo(long id)
+        {
+            var customer = await _context.customers.FindAsync(id);
+
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return customer;
+        }
+
         [HttpPut ("HeadquarterUpdate/{id}&{company_headquarter}")]
         public string HeadquarterUpdate (long id,string company_headquarter)
         {
