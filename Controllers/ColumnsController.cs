@@ -51,10 +51,10 @@ namespace RestfulApi.Controllers
                 if(column.battery_id == battery_id)
                 {
                     CustomerColumn.Add(column);
-                    return CustomerColumn;
+                    
                 }
             }
-            return null;
+            return CustomerColumn;
         }
 
         // PUT: api/Columns/5
