@@ -40,6 +40,22 @@ namespace RestfulApi.Controllers
 
             return column;
         }
+        [HttpGet("/getCustomerColumn/{battery_id}")]
+        public async Task<List<Column>> customerColumn(int battery_id)
+        {
+            List<Column> CustomerColumn = new List<Column>();
+            var columnlist = await _context.columns.ToListAsync();
+
+            foreach (Column column in columnlist)
+            {
+                if(column.battery_id == battery_id)
+                {
+                    CustomerColumn.Add(column);
+                    return CustomerColumn;
+                }
+            }
+            return null;
+        }
 
         // PUT: api/Columns/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
