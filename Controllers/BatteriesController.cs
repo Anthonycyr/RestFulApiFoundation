@@ -40,6 +40,23 @@ namespace RestfulApi.Controllers
 
             return battery;
         }
+        
+        [HttpGet("/getCustomerBattery/{building_id}")]
+        public async Task<List<Battery>> customerBattery(int building_id)
+        {
+            List<Battery> CustomerBattery = new List<Battery>();
+            var batterylist = await _context.batteries.ToListAsync();
+
+            foreach (Battery battery in batterylist)
+            {
+                if(battery.building_id == building_id)
+                {
+                    CustomerBattery.Add(battery);
+                    
+                } 
+            }
+            return CustomerBattery;
+        }
 
         // PUT: api/Batteries/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

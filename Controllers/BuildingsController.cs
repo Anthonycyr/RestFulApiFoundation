@@ -15,14 +15,16 @@ namespace RestfulApi.Controllers
     public class BuildingsController : ControllerBase
     {
         private readonly BuildingContext _context;
+        private readonly CustomerContext _cusContext;
 
         private readonly BatteryContext _batContext;
         private readonly ColumnContext _colContext;
         private readonly ElevatorContext _eleContext;
 
-        public BuildingsController(BuildingContext context, BatteryContext batContext,ColumnContext colContext,ElevatorContext eleContext)
+        public BuildingsController(BuildingContext context,CustomerContext cusContext, BatteryContext batContext,ColumnContext colContext,ElevatorContext eleContext)
         {
             _context = context;
+            _cusContext = cusContext;
             _batContext = batContext;
             _colContext = colContext;
             _eleContext = eleContext;
@@ -100,6 +102,22 @@ namespace RestfulApi.Controllers
                 }
             }
             return BuildingInterventions;
+        }
+        [HttpGet("/getCustomerBuildings/{customer_id}")]
+        public async Task<List<Building>> customerBuilding(int customer_id)
+        {
+            List<Building> CustomerBuilding = new List<Building>();
+            var buildinglist = await _context.buildings.ToListAsync();
+
+            foreach (Building building in buildinglist)
+            {
+                if(building.customer_id == customer_id)
+                {
+                    CustomerBuilding.Add(building);
+                    
+                }
+            }
+            return CustomerBuilding;
         }
 
         // PUT: api/Buildings/5
