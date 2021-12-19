@@ -25,13 +25,13 @@ You can also try out the 3 new API Calls that i've created for the consolidation
 - a patch for InProgress, which changes the status of a pending intervention to in progress and adds a start time to the intervention 
 - and a patch for Completed, which changes the status of an in progress intervention to Completed and adds an end time to the intervention
 
-Week 11 
-we used to create the intervbention form -/getId/{company_email} to get the custer id with his email
-                                         -/getCustomerBuildings/{customer_id} to get the buildings of the customer
-                                         -/getCustomerBattery/{building_id} to get the batteries of the customer buildings selected
-                                         -/getCustomerColumn/{battery_id} to get the Column of the selected battery 
-                                         -/getCustomerElevator/{column_id} to get the elevator of the selected column
- to post the intervention form(it is currently not working because of the CORS bug) -/api/Interventions
+Week 11 \
+we used to create the intervbention form -/getId/{company_email} to get the custer id with his email\
+                                         -/getCustomerBuildings/{customer_id} to get the buildings of the customer\
+                                         -/getCustomerBattery/{building_id} to get the batteries of the customer buildings selected\
+                                         -/getCustomerColumn/{battery_id} to get the Column of the selected battery\
+                                         -/getCustomerElevator/{column_id} to get the elevator of the selected column\
+ to post the intervention form(it is currently not working because of the CORS bug) -/api/Interventions\
  to put the new contact info (same problem as the post intervention) -/api/Customers/ContactUpdate/{id}&{company_name}&{company_headquarter}&{company_contact}&{company_description}&{service_technical_authority_name}&{technical_authority_phone}&{service_technical_authority_email}
 
 you can try each method with the try it out button, and then the excute button, although the patch requires you to select the appropriate intervention by inputting an ID before clicking the execute button.
