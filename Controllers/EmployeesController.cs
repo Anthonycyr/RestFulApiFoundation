@@ -27,7 +27,21 @@ namespace RestfulApi.Controllers
         {
             return await _context.employees.ToListAsync();
         }
-       
+        // GET: api/Employees/{email}
+        [HttpGet("{email}")]
+        public async Task<ActionResult<bool>> IsEmailCustomer(string email)
+        {
+            var employeelist = await _context.employees.ToListAsync();
+            foreach (Employee employee in employeelist)
+            {
+                if (employee.email == $"{email}")
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
 
         // GET: api/Employees/5
         [HttpGet("{id}")]
@@ -42,7 +56,7 @@ namespace RestfulApi.Controllers
 
             return elevator;
         }
-        
+
         // PUT: api/Employees/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
