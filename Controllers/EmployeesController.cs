@@ -28,7 +28,7 @@ namespace RestfulApi.Controllers
             return await _context.employees.ToListAsync();
         }
         // GET: api/Employees/{email}
-        [HttpGet("{email}")]
+        [HttpGet("/email/{email}")]
         public async Task<ActionResult<bool>> IsEmailEmployee(string email)
         {
             var employeelist = await _context.employees.ToListAsync();

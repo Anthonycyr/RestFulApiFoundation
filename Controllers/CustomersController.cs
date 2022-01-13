@@ -62,7 +62,7 @@ namespace RestfulApi.Controllers
 
 
         // GET: api/Customers/{email}
-        [HttpGet("/email/{company_email}")]
+        [HttpGet("{company_email}")]
         public async Task<ActionResult<bool>> IsEmailCustomer(string company_email)
         {
             var customerlist = await _context.customers.ToListAsync();
