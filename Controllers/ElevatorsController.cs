@@ -27,7 +27,7 @@ namespace RestfulApi.Controllers
         {
             return await _context.elevators.ToListAsync();
         }
-       
+
 
         // GET: api/Elevators/5
         [HttpGet("{id}")]
@@ -42,12 +42,12 @@ namespace RestfulApi.Controllers
 
             return elevator;
         }
-         // GET: api/Elevators/status
+        // GET: api/Elevators/status
         [HttpGet("status")]
         public async Task<List<Elevator>> GetListElevator(string Status)
         {
             // var offlineStatus= new[] {"Offline", "Intervention"};
-            var elevator = await _context.elevators.Where(x => x.status == "Offline" || x.status == "Intervention" ).ToListAsync();
+            var elevator = await _context.elevators.Where(x => x.status == "Offline" || x.status == "Intervention").ToListAsync();
             return elevator;
         }
         [HttpGet("/getCustomerElevator/{column_id}")]
@@ -58,15 +58,15 @@ namespace RestfulApi.Controllers
 
             foreach (Elevator elevator in elevatorlist)
             {
-                if(elevator.column_id == column_id)
+                if (elevator.column_id == column_id)
                 {
                     CustomerElevator.Add(elevator);
-                    
+
                 }
             }
             return CustomerElevator;
         }
-        
+
 
 
         // PUT: api/Elevators/5
@@ -98,6 +98,31 @@ namespace RestfulApi.Controllers
             }
 
             return NoContent();
+        }
+        [HttpPatch("online/{id}")]
+        public async Task<string> UpdateOnline(long id)
+        {
+            var elevator = await _context.elevators.FindAsync(id);
+            Console.WriteLine(elevator.status);
+            if (elevator == null)
+            {
+                return "Please enter an existing elevator id";
+            }
+            if (elevator.status != "Offline" && elevator.status != "Intervention")
+            {
+                return "The Elevator you chose doesn't have a status of Intervention or Offline";
+            }
+            else
+            {
+                elevator.status = "Online";
+
+                // DateTime InterventionStartTime = DateTime.Now;
+                // elevator.intervention_start_date_time = InterventionStartTime;
+
+                _context.elevators.Update(elevator);
+                await _context.SaveChangesAsync();
+                return "The elevator #" + elevator.Id + " status has been successufully changed to Online";
+            }
         }
 
         // POST: api/Elevators
