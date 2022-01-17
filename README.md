@@ -7,6 +7,11 @@ The Rest Api will allow us to know and to manipulate the status of all the relev
 
 To make it work, use the corect endpoint for your needs:
 
+Week 16
+-To tchek if the email is an employee email **// GET: email/nicolas.genest@codeboxx.biz(as example)**
+-To get all the elevators that have Offline or Intervention status **//api/Elevators/status**
+-To change all the elevators that have Offline or Intervention status to Online **//api/Elevators/online/{id}**
+
 - Retrieving the current status of a specific Battery: **// GET: api/Batteries/1**
 - Changing the status of a specific Battery: **// POST: api/Batteries**
 - Retrieving the current status of a specific Column: **// GET: api/Columns/5**
