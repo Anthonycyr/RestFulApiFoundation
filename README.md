@@ -22,7 +22,7 @@ Week 16
 - Retrieving a list of Buildings that contain at least one battery, column or elevator requiring intervention: **//  GET: api/Buildings/BuildingIntervention**
 - Retrieving a list of Leads created in the last 30 days who have not yet become customers: **// GET: api/Leads/CustomerLeads**
 
-This API is debloy on a Azure Server and establish a connection with the MySQL transactional database that serves the Ruby on Rails application.
+This API is debloy on a Heroku Server and establish a connection with the MySQL transactional database that serves the Ruby on Rails application.
 
 You can also try out the 3 new API Calls that i've created for the consolidation week:
 
